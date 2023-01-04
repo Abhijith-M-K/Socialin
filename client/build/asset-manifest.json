@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6a117094.css",
+    "main.js": "/static/js/main.14562f9b.js",
+    "static/media/messi.jpg": "/static/media/messi.f5355779712792e957df.jpg",
+    "static/media/messi-cover.jpg": "/static/media/messi-cover.1a8a674451a7e1ebf2c8.jpg",
+    "static/media/new.png": "/static/media/new.aeaa31b2bfa949fc5119.png",
+    "index.html": "/index.html",
+    "main.6a117094.css.map": "/static/css/main.6a117094.css.map",
+    "main.14562f9b.js.map": "/static/js/main.14562f9b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a117094.css",
+    "static/js/main.14562f9b.js"
+  ]
+}

@@ -19,7 +19,7 @@ const useSearchUsers = (query) => {
     let cancel;
     axios({
       method: "GET",
-      url: `http://localhost:5000/user/search`,
+      url: `${process.env.REACT_APP_BASE_URL}/user/search`,
       params: { name: query },
       cancelToken: new axios.CancelToken((c) => (cancel = c)),
     })
