@@ -152,3 +152,20 @@ export const UnFollowUser = async (req, res) => {
     }
   }
 };
+
+
+export const searchUser = async (req, res) => {
+  try {
+    const keyword = req.query.name || "";
+    const users = await UserModel.find({
+      $or: [
+        { username: { $regex: keyword, $options: "i" } },
+        { firstname: { $regex: keyword, $options: "i" } },
+        { lastname: { $regex: keyword, $options: "i" } },
+      ],
+    }).select({ username: 1, firstname: 1, lastname: 1, profilePicture: 1 });
+    res.status(200).json(users);
+  } catch (err) {
+    console.log(err);
+  }
+};

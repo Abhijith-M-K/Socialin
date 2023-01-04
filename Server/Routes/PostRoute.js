@@ -8,7 +8,6 @@ import {
   updatePost,
 
 } from "../Controllers/PostController.js";
-import {createComment} from "../Controllers/CommentController.js";
 
 
 
@@ -17,12 +16,12 @@ const router = express.Router();
 router.post("/", createPost);
 router.get("/:id", getPost);
 router.put("/:id", updatePost);
-router.delete("/:id", deletePost);
+// router.delete("/:id", deletePost);
 router.put("/:id/like", likePost);
 router.get("/:id/timeline", getTimeLinePosts);
+router.post("/post-delete", deletePost);
 
 
-router.post("/:id/comment", createComment );
 
 
 

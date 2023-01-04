@@ -10,6 +10,8 @@ import UploadRoute from "./Routes/UploadRoute.js";
 import ChatRoute from "./Routes/ChatRoute.js"
 import MessageRoute from "./Routes/MessageRoute.js"
 import CommentRoute from "./Routes/CommentRoute.js"
+import { adminLogin, adminRegister, blockUser, getFullUsers, unBlockUser } from "./controllers/AdminController.js";
+// import {adminLogin,adminRegister,getFullUsers} from "./Routes/AdminRoute.js";
 
 
 
@@ -48,5 +50,10 @@ app.use("/post", PostRoute);
 app.use("/upload", UploadRoute);
 app.use("/chat",ChatRoute);
 app.use('/comment', CommentRoute);
-app.use("/message",MessageRoute)
-
+app.use("/message",MessageRoute);
+app.post("/admin/register",adminRegister);
+app.post("/admin/login",adminLogin);
+app.get("/admin/get-users",getFullUsers)
+app.post("/admin/block-user",blockUser)
+app.post("/admin/unblock-user",unBlockUser)
+            
