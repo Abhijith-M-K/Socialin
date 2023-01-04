@@ -1,0 +1,20 @@
+.userTable-main{
+    gap: 10px;
+}
+.commentButton{
+    background-color: rgb(245, 5, 5);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    height: 35px;
+    padding: 10px;
+    
+}
+.unblockbutton{
+    background-color: rgb(2, 248, 19);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    height: 35px;
+    padding: 10px;
+}
