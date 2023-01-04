@@ -10,7 +10,7 @@ import UploadRoute from "./Routes/UploadRoute.js";
 import ChatRoute from "./Routes/ChatRoute.js"
 import MessageRoute from "./Routes/MessageRoute.js"
 import CommentRoute from "./Routes/CommentRoute.js"
-import { adminLogin, adminRegister, blockUser, getFullUsers, unBlockUser } from "./controllers/AdminController.js";
+import { adminLogin, adminRegister, blockUser, getFullUsers, unBlockUser } from "./Controllers/AdminController.js";
 // import {adminLogin,adminRegister,getFullUsers} from "./Routes/AdminRoute.js";
 
 
