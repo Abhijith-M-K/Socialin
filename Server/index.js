@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import { createServer } from "http";
 import { Server } from "socket.io";
-import connectDB from "./config/db.js";
+import connectDB from "./Config/db.js";
 import AuthRoute from "./Routes/AuthRoute.js";
 import UserRoute from "./Routes/UserRoute.js";
 import PostRoute from "./Routes/PostRoute.js";
