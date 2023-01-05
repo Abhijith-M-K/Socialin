@@ -55,7 +55,7 @@ const httpServer = createServer(app);
 
 const io = new Server(httpServer, {
   cors: {
-    origin: ["https://socialin.netlify.app", "http://localhost:3000"],
+    origin: ["https://socialin.netlify.app:8800", "http://localhost:3000","https://socialin.netlify.app"],
   },
 });
 

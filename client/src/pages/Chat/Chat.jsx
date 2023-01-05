@@ -13,6 +13,7 @@ import Comment from "../../img/comment.png";
 import { UilSetting } from "@iconscout/react-unicons";
 import ChatBox from "../../components/ChatBox/ChatBox";
 import { io } from "socket.io-client";
+const socket = io.connect(process.env.REACT_APP_SOCKET);
 
 const Chat = () => {
   const { user } = useSelector((state) => state.authReducer.authData);
@@ -24,26 +25,23 @@ const Chat = () => {
   const [sendMessage, setSendMessage] = useState(null);
   const [recieveMessage, setRecieveMessage] = useState(null);
 
-  const socket = useRef();
-
   //send message to socket server
   useEffect(() => {
     if (sendMessage !== null) {
-      socket.current.emit("send-message", sendMessage);
+      socket.emit("send-message", sendMessage);
     }
   }, [sendMessage]);
 
   useEffect(() => {
-    socket.current = io(`${process.env.REACT_APP_BASE_URL}:8800`);
-    socket.current.emit("new-user-add", user._id);
-    socket.current.on("get-users", (users) => {
+    socket.emit("new-user-add", user._id);
+    socket.on("get-users", (users) => {
       setOnlineUsers(users);
     });
   }, [user]);
 
   //receive messsage from socket server
   useEffect(() => {
-    socket.current.on("receive-message", (data) => {
+    socket.on("receive-message", (data) => {
       setRecieveMessage(data);
     });
   }, []);
@@ -122,9 +120,6 @@ const Chat = () => {
 
 export default Chat;
 
-
-
-
 // import React, { useRef, useState } from "react";
 // import ChatBox from "../../components/ChatBox/ChatBox";
 // import Conversation from "../../components/Coversation/Conversation";
@@ -174,7 +169,6 @@ export default Chat;
 //       socket.current.emit("send-message", sendMessage);}
 //   }, [sendMessage]);
 
-
 //   // Get the message from socket server
 //   useEffect(() => {
 //     socket.current.on("recieve-message", (data) => {
@@ -184,7 +178,6 @@ export default Chat;
 
 //     );
 //   }, []);
-
 
 //   const checkOnlineStatus = (chat) => {
 //     const chatMember = chat.members.find((member) => member !== user._id);
