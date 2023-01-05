@@ -1,6 +1,6 @@
 import React from "react";
 import "./Search.css";
-import useSearchUsers from "../../Hooks/useSearchUsers";
+import useSearchUsers from "../../hooks/useSearchUsers";
 import { Link } from "react-router-dom";
 const serverImages = process.env.REACT_APP_PUBLIC_FOLDER;
 const serverStatic = process.env.REACT_APP_PUBLIC_FOLDER;

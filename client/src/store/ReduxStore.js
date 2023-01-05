@@ -6,7 +6,7 @@ import {
     compose,
   } from "redux";
   import thunk from "redux-thunk";
-  import { reducers } from "../reducers";
+  import { reducers } from "../reducers/Index";
   
   function saveToLocalStorage(store) {
     try {

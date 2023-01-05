@@ -6,10 +6,7 @@ import {
   getTimeLinePosts,
   likePost,
   updatePost,
-
 } from "../Controllers/PostController.js";
-
-
 
 const router = express.Router();
 
@@ -20,12 +17,5 @@ router.put("/:id", updatePost);
 router.put("/:id/like", likePost);
 router.get("/:id/timeline", getTimeLinePosts);
 router.post("/post-delete", deletePost);
-
-
-
-
-
-
-
 
 export default router;
